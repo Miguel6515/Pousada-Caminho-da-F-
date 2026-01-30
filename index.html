@@ -26,10 +26,9 @@
             color: #444;
             line-height: 1.8;
             overflow-x: hidden;
-            background-image: radial-gradient(#e0ded8 1px, transparent 1px);
-            background-size: 20px 20px;
         }
 
+        /* HEADER */
         header {
             position: fixed;
             width: 100%;
@@ -51,6 +50,7 @@
         nav a { margin-left: 30px; text-decoration: none; color: var(--earth); font-weight: 600; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--primary); }
 
+        /* HERO */
         .hero {
             height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(93, 64, 55, 0.5)), url("imagens/fachada.jpg") center/cover no-repeat fixed;
@@ -97,14 +97,14 @@
         }
         .btn-peregrino:hover { background: #fff; transform: translateY(-3px); }
 
+        /* SEÇÕES */
         section { padding: 100px 8%; max-width: 1400px; margin: auto; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 42px; text-align: center; color: var(--earth); margin-bottom: 60px; }
-        .section-title::after { content: "➡"; display: block; color: var(--primary); font-size: 30px; margin-top: 10px; transform: rotate(90deg); }
 
-        /* EFEITO ZOOM (APROX) */
-        .img-box { overflow: hidden; border-radius: 10px; box-shadow: var(--shadow); border: 5px solid white; }
-        .img-box img { width: 100%; transition: 0.5s ease; display: block; }
-        .img-box:hover img { transform: scale(1.1); }
+        /* ZOOM (APROX) */
+        .img-zoom-container { overflow: hidden; border-radius: 10px; box-shadow: var(--shadow); border: 5px solid white; }
+        .img-zoom-container img { width: 100%; transition: transform 0.5s ease; display: block; }
+        .img-zoom-container:hover img { transform: scale(1.1); }
 
         /* GRID POLAROID */
         .grid-polaroid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -121,14 +121,16 @@
         .servico-item { background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-bottom: 4px solid var(--primary); }
 
         .quote-section { background: var(--earth); color: var(--sand); text-align: center; padding: 80px 20px; border-radius: 20px; margin: 40px 8%; }
-        .quote-text { font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic; }
-
+        
+        /* MAPA */
         .map-frame { border: 10px solid white; box-shadow: var(--shadow); height: 450px; border-radius: 4px; overflow: hidden; }
 
+        /* WHATSAPP */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px;
             background: #25d366; width: 65px; height: 65px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
         .whatsapp-float img { width: 35px; filter: brightness(0) invert(1); }
 
@@ -164,11 +166,11 @@
             <div style="flex: 1; min-width: 300px; font-size: 18px; text-align: justify;">
                 <p>Aqui em Inconfidentes, sabemos o peso da sua mochila e a alegria da sua chegada. Nossa pousada é um <strong>ponto de apoio</strong> dedicado a quem trilha esse caminho sagrado.</p>
                 <br>
-                <p>Oferecemos o conforto necessário para sua recuperação: banho quente, camas impecáveis e um café da manhã típico para sustentar sua jornada até o próximo destino.</p>
+                <p>Oferecemos o conforto necessário para sua recuperação: banho quente, camas impecáveis e um café da manhã típico para sustentar sua jornada.</p>
             </div>
             <div style="flex: 1; min-width: 300px;">
-                <div class="img-box">
-                    <img src="imagens/ciclistas.jpg" alt="Ciclistas no Caminho">
+                <div class="img-zoom-container">
+                    <img src="imagens/entrada.webp" alt="Ciclistas na Pousada">
                 </div>
             </div>
         </div>
@@ -177,50 +179,50 @@
     <section id="servicos">
         <h2 class="section-title">Nossa Estrutura</h2>
         <div class="servicos-grid">
-            <div class="servico-item"><h3>☕ Café Farto</h3><p>Bolos caseiros e frutas frescas.</p></div>
-            <div class="servico-item"><h3>🚿 Banho Quente</h3><p>Ducha relaxante para o peregrino.</p></div>
-            <div class="servico-item"><h3>🧺 Lavanderia</h3><p>Espaço para cuidar das suas roupas.</p></div>
-            <div class="servico-item"><h3>📶 Wi-Fi</h3><p>Conecte-se com sua família.</p></div>
+            <div class="servico-item"><h3>☕ Café Farto</h3><p>Bolos e pão de queijo quentinho.</p></div>
+            <div class="servico-item"><h3>🚿 Banho Quente</h3><p>Ducha relaxante pós trilha.</p></div>
+            <div class="servico-item"><h3>🧺 Lavanderia</h3><p>Espaço para cuidar das roupas.</p></div>
+            <div class="servico-item"><h3>📶 Wi-Fi</h3><p>Conexão em toda a pousada.</p></div>
         </div>
     </section>
 
     <div class="quote-section">
-        <p class="quote-text">"A felicidade não está no destino, mas na jornada."</p>
-        <p style="margin-top: 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">— Bom Caminho!</p>
+        <p style="font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic;">"A felicidade não está no destino, mas na jornada."</p>
     </div>
 
     <section id="peregrinos">
-        <h2 class="section-title">Estrutura do Viajante</h2>
+        <h2 class="section-title">Galeria da Pousada</h2>
         <div class="grid-polaroid">
             <div class="polaroid">
-                <div class="img-wrap"><img src="imagens/vista.jpg" alt="Descanso"></div>
+                <div class="img-wrap"><img src="imagens/vista.jpg" alt="Vista"></div>
                 <p>Paz na Varanda</p>
             </div>
             <div class="polaroid">
-                <div class="img-wrap"><img src="imagens/quarto.jpg" alt="Conforto"></div>
+                <div class="img-wrap"><img src="imagens/quarto.jpg" alt="Quarto"></div>
                 <p>Sono Merecido</p>
             </div>
             <div class="polaroid">
-                <div class="img-wrap"><img src="imagens/cafe-com-bolo.jpg" alt="Café"></div>
+                <div class="img-wrap">
+                    <img src="imagens/cafe.jpg" alt="Café Mineiro">
+                </div>
                 <p>Energia Mineira</p>
             </div>
         </div>
     </section>
 
     <section id="localizacao">
-        <h2 class="section-title">Localização na Rota</h2>
+        <h2 class="section-title">Nossa Localização</h2>
         <div class="map-frame">
-            <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14782.123456789!2d-46.3300!3d-22.3150!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zInBvdXNhZGEi!5e0!3m2!1spt-BR!2sbr!4v123456789">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.473539824641!2d-46.3312948!3d-22.316833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c90382348a27d1%3A0x8e83b8b6a9821817!2sInconfidentes%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
         </div>
         <p style="text-align: center; margin-top: 20px; font-weight: 600;">📍 Rodovia MG-290, Inconfidentes - MG</p>
     </section>
 
     <footer style="background: var(--earth); color: var(--sand); text-align: center; padding: 60px 20px;">
-        <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Pousada Caminho da Fé</h3>
-        <p>Bom Caminho e um descanso abençoado!</p>
-        <p style="font-size: 12px; margin-top: 20px; opacity: 0.6;">© 2026 - O seu refúgio em Inconfidentes, MG</p>
+        <p>© 2026 - Pousada Caminho da Fé</p>
     </footer>
 
     <a href="https://wa.me/5535998171465" class="whatsapp-float" target="_blank">
