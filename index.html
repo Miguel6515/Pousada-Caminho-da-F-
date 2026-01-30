@@ -3,105 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pousada Caminho da Fé | Inconfidentes MG</title>
+<title>Pousada Caminho da Fé</title>
 
 <style>
-:root{
-  --verde:#2f5d50;
-  --verde-escuro:#1f3f36;
-  --claro:#f8f8f8;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
+  margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#ffffff;
+  background:#f5f5f5;
   color:#333;
 }
 
-/* HERO */
 .hero{
-  background:url("entrada.webp") center/cover no-repeat;
-  height:80vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:relative;
   text-align:center;
-  position:relative;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.45);
-  top:0;
-  left:0;
-}
-
-.hero-content{
-  position:relative;
   color:white;
-  z-index:2;
+}
+
+.hero img{
+  width:100%;
+  height:70vh;
+  object-fit:cover;
+  filter:brightness(60%);
+}
+
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 }
 
 .logo{
-  width:160px;
+  width:180px;
   margin-bottom:20px;
 }
 
-.hero h1{
-  font-size:48px;
-}
-
-.hero p{
-  margin-top:15px;
-  font-size:20px;
-}
-
-/* SEÇÕES */
 section{
   max-width:1100px;
-  margin:80px auto;
+  margin:70px auto;
   padding:0 20px;
 }
 
 h2{
-  color:var(--verde);
-  margin-bottom:25px;
-  font-size:28px;
+  color:#2f5d50;
+  margin-bottom:20px;
 }
 
-/* SOBRE */
 .sobre p{
-  line-height:1.8;
+  line-height:1.7;
   margin-bottom:15px;
-  font-size:17px;
 }
 
-/* SERVIÇOS */
-.servicos{
-  background:var(--claro);
-  padding:60px 20px;
-}
-
-.servicos ul{
-  list-style:none;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.servicos li{
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* GALERIA */
 .galeria{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -110,53 +62,55 @@ h2{
 
 .galeria img{
   width:100%;
-  height:240px;
+  height:230px;
   object-fit:cover;
   border-radius:12px;
-  transition:0.4s;
 }
 
-.galeria img:hover{
-  transform:scale(1.05);
+.servicos{
+  background:white;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-/* MAPA */
+.servicos ul{
+  list-style:none;
+  padding:0;
+}
+
+.servicos li{
+  margin:10px 0;
+}
+
 iframe{
   width:100%;
-  height:380px;
-  border-radius:15px;
+  height:350px;
+  border-radius:12px;
   border:none;
 }
 
-/* CONTATO */
 .contato{
   text-align:center;
 }
 
 .btn{
   display:inline-block;
-  margin-top:25px;
   background:#25d366;
   color:white;
   padding:15px 30px;
   border-radius:50px;
   text-decoration:none;
-  font-size:18px;
   font-weight:bold;
-  transition:0.3s;
+  margin-top:20px;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-}
-
-/* FOOTER */
 footer{
-  background:var(--verde-escuro);
+  background:#2f5d50;
   color:white;
   text-align:center;
-  padding:30px;
-  margin-top:80px;
+  padding:25px;
+  margin-top:60px;
 }
 </style>
 </head>
@@ -164,52 +118,45 @@ footer{
 <body>
 
 <div class="hero">
-  <div class="hero-content">
-    <img src="entrada.webp" class="logo" alt="Logo Pousada">
+  <img src="images/entrada.webp">
+  <div class="hero-text">
+    <img src="images/entrada.webp" class="logo">
     <h1>Pousada Caminho da Fé</h1>
-    <p>Conforto, tranquilidade e acolhimento em Inconfidentes – MG</p>
+    <p>Conforto e tranquilidade em Inconfidentes – MG</p>
   </div>
 </div>
 
 <section class="sobre">
 <h2>Sobre a Pousada</h2>
-
 <p>
-A Pousada Caminho da Fé nasceu com o propósito de acolher peregrinos, viajantes e turistas que passam por Inconfidentes – MG em busca de descanso, fé e tranquilidade.
+A Pousada Caminho da Fé oferece um ambiente acolhedor e familiar para peregrinos e visitantes que passam por Inconfidentes – MG.
 </p>
-
 <p>
-Localizada em ponto estratégico próximo ao trevo da cidade, nossa pousada oferece fácil acesso, ambiente familiar e uma estrutura pensada para proporcionar conforto após um dia de caminhada ou viagem.
+Com localização estratégica próxima ao trevo da cidade, proporciona fácil acesso e conforto após um dia de caminhada ou viagem.
 </p>
-
 <p>
-Com apartamentos equipados, ambiente seguro e atendimento atencioso, buscamos oferecer uma experiência simples, acolhedora e com excelente custo-benefício.
+Nosso compromisso é oferecer uma estadia tranquila, segura e com excelente custo-benefício.
 </p>
-
-<p>
-Seja para peregrinos do Caminho da Fé ou para quem visita a região a trabalho ou lazer, aqui você encontra descanso, hospitalidade e tranquilidade.
-</p>
-</section>
-
-<section class="servicos">
-<h2>Nossos Diferenciais</h2>
-<ul>
-<li>✔ Quartos com TV e ventilador de teto</li>
-<li>✔ Garagem coberta</li>
-<li>✔ Café da manhã</li>
-<li>✔ Wi-Fi disponível</li>
-<li>✔ Ambiente familiar e seguro</li>
-<li>✔ Localização privilegiada</li>
-</ul>
 </section>
 
 <section>
 <h2>Galeria</h2>
 <div class="galeria">
-  <img src="fachada.jpg">
-  <img src="vista.jpg">
-  <img src="servico.jpg">
+  <img src="images/fachada.jpg">
+  <img src="images/vista.jpg">
+  <img src="images/servico.jpg">
 </div>
+</section>
+
+<section class="servicos">
+<h2>Nossos Diferenciais</h2>
+<ul>
+<li>✔ Quartos confortáveis</li>
+<li>✔ Ambiente familiar</li>
+<li>✔ Wi-Fi disponível</li>
+<li>✔ Garagem</li>
+<li>✔ Localização privilegiada</li>
+</ul>
 </section>
 
 <section>
@@ -219,14 +166,13 @@ Seja para peregrinos do Caminho da Fé ou para quem visita a região a trabalho 
 
 <section class="contato">
 <h2>Contato e Reservas</h2>
-<p>📍 Inconfidentes – MG</p>
 <a class="btn" href="https://wa.me/5535998171465" target="_blank">
 Reservar pelo WhatsApp
 </a>
 </section>
 
 <footer>
-© 2026 – Pousada Caminho da Fé | Inconfidentes MG
+© 2026 – Pousada Caminho da Fé
 </footer>
 
 </body>
