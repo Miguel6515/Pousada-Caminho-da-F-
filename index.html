@@ -48,6 +48,7 @@
 
         nav a { margin-left: 30px; text-decoration: none; color: var(--earth); font-weight: 600; font-size: 14px; text-transform: uppercase; }
 
+        /* HERO COM LOGO ENQUADRADA */
         .hero {
             height: 100vh;
             background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(93, 64, 55, 0.5)), url("imagens/fachada.jpg") center/cover no-repeat fixed;
@@ -89,51 +90,50 @@
             font-weight: 700;
             text-transform: uppercase;
             transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+        .btn-peregrino:hover { background: white; transform: scale(1.05); }
 
-        section { padding: 80px 8%; max-width: 1400px; margin: auto; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 38px; text-align: center; color: var(--earth); margin-bottom: 50px; }
+        section { padding: 100px 8%; max-width: 1400px; margin: auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 42px; text-align: center; color: var(--earth); margin-bottom: 60px; }
+        .section-title::after { content: "➡"; display: block; color: var(--primary); transform: rotate(90deg); margin-top: 10px; }
 
+        /* EFEITO DE ZOOM NAS IMAGENS */
+        .img-zoom-container { overflow: hidden; border-radius: 10px; box-shadow: var(--shadow); border: 5px solid white; }
+        .img-zoom-container img { width: 100%; transition: transform 0.5s ease; display: block; }
+        .img-zoom-container:hover img { transform: scale(1.1); } /* O APROX QUE VOCÊ PEDIU */
+
+        /* GRID POLAROID COM ZOOM */
         .grid-polaroid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .polaroid { background: white; padding: 15px 15px 50px; box-shadow: var(--shadow); transform: rotate(-2deg); }
-        .polaroid img { width: 100%; height: 300px; object-fit: cover; }
-        .polaroid p { text-align: center; font-family: 'Caveat', cursive; font-size: 24px; margin-top: 15px; }
+        .polaroid { background: white; padding: 15px 15px 50px; box-shadow: var(--shadow); transform: rotate(-2deg); transition: 0.3s; }
+        .polaroid:nth-child(even) { transform: rotate(2deg); }
+        .polaroid:hover { transform: rotate(0deg) translateY(-10px); z-index: 5; }
+        .polaroid .img-wrap { overflow: hidden; width: 100%; height: 300px; }
+        .polaroid img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .polaroid:hover img { transform: scale(1.1); }
+        .polaroid p { text-align: center; font-family: 'Caveat', cursive; font-size: 24px; margin-top: 15px; color: var(--earth); }
 
-        .servicos-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        .servico-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            border-bottom: 4px solid var(--primary);
-        }
+        /* SERVIÇOS */
+        .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .servico-card { background: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: var(--shadow); border-bottom: 5px solid var(--primary); transition: 0.3s; }
+        .servico-card:hover { transform: translateY(-5px); }
+        .servico-card h3 { color: var(--earth); margin-bottom: 15px; font-family: 'Playfair Display', serif; }
 
-        .quote-section {
-            background: var(--earth);
-            color: var(--sand);
-            text-align: center;
-            padding: 60px 20px;
-            border-radius: 20px;
-            margin: 40px 8%;
-        }
+        .quote-section { background: var(--earth); color: var(--sand); text-align: center; padding: 80px 20px; border-radius: 20px; margin: 40px 8%; }
 
-        .map-frame { border: 10px solid white; box-shadow: var(--shadow); height: 450px; overflow: hidden; }
+        .map-frame { border: 10px solid white; box-shadow: var(--shadow); height: 450px; border-radius: 8px; overflow: hidden; }
 
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px;
             background: #25d366; width: 65px; height: 65px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         .whatsapp-float img { width: 35px; filter: brightness(0) invert(1); }
 
         @media (max-width: 768px) {
             .badge-logo { top: 90px; right: 50%; transform: translateX(50%); width: 120px; height: 120px; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -158,62 +158,79 @@
     </div>
 
     <section id="sobre">
-        <h2 class="section-title">O Descanso do Peregrino</h2>
-        <div class="grid-polaroid">
-            <div class="polaroid">
-                <img src="imagens/vista.jpg" alt="Vista">
-                <p>Paz na Varanda</p>
+        <h2 class="section-title">Acolhimento Mineiro</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+            <div style="flex: 1; min-width: 300px; font-size: 18px; text-align: justify;">
+                <p>Aqui em Inconfidentes, a "Capital Nacional do Crochê", sabemos que cada passo do peregrino carrega uma história e uma prece. Nossa pousada foi pensada para ser mais do que um quarto: é um <strong>ponto de renovação</strong>.</p>
+                <br>
+                <p>Entendemos as necessidades de quem percorre o Caminho da Fé. Por isso, oferecemos um ambiente silencioso, familiar e preparado para receber você com o carinho que só Minas Gerais tem. Do café quentinho à cama macia, tudo é feito para que você siga sua jornada com energia e paz no coração.</p>
             </div>
-            <div class="polaroid">
-                <img src="imagens/quarto.jpg" alt="Quarto">
-                <p>Sono Merecido</p>
-            </div>
-            <div class="polaroid">
-                <img src="imagens/acolhimento.jpg" alt="Acolhimento">
-                <p>Acolhimento Mineiro</p>
+            <div style="flex: 1; min-width: 300px;">
+                <div class="img-zoom-container">
+                    <img src="imagens/acolhimento.jpg" alt="Acolhimento na Pousada">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="servicos" style="background-color: rgba(255,255,255,0.5);">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="servicos-container">
-            <div class="servico-item">
+    <section id="galeria">
+        <div class="grid-polaroid">
+            <div class="polaroid">
+                <div class="img-wrap"><img src="imagens/vista.jpg"></div>
+                <p>Paz na Varanda</p>
+            </div>
+            <div class="polaroid">
+                <div class="img-wrap"><img src="imagens/quarto.jpg"></div>
+                <p>Sono Merecido</p>
+            </div>
+            <div class="polaroid">
+                <div class="img-wrap"><img src="imagens/cafe.jpg"></div>
+                <p>Energia Mineira</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" style="background: #fdfcf9;">
+        <h2 class="section-title">Nossa Estrutura</h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
                 <h3>☕ Café da Manhã</h3>
-                <p>Farto e caseiro para começar bem o dia.</p>
+                <p>Produtos locais, pão de queijo quentinho e frutas para nutrir sua caminhada.</p>
             </div>
-            <div class="servico-item">
-                <h3>🚿 Banho Quente</h3>
-                <p>Conforto essencial após quilômetros de fé.</p>
+            <div class="servico-card">
+                <h3>🚿 Banho Revigorante</h3>
+                <p>Duchas com pressão e temperatura ideal para relaxar cada músculo cansado.</p>
             </div>
-            <div class="servico-item">
+            <div class="servico-card">
                 <h3>🧺 Lavanderia</h3>
-                <p>Área disponível para cuidar do seu equipamento.</p>
+                <p>Espaço dedicado para lavar e secar suas roupas com praticidade.</p>
             </div>
-            <div class="servico-item">
-                <h3>📶 Wi-Fi</h3>
-                <p>Conecte-se e compartilhe sua jornada.</p>
+            <div class="servico-card">
+                <h3>📶 Conectividade</h3>
+                <p>Wi-Fi de alta velocidade para compartilhar suas conquistas com quem ama.</p>
             </div>
         </div>
     </section>
 
     <div class="quote-section">
-        <p style="font-family: 'Playfair Display', serif; font-size: 24px; font-style: italic;">"Bom Caminho e um descanso abençoado!"</p>
+        <p style="font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic;">"Bom Caminho e um descanso abençoado!"</p>
+        <p style="margin-top: 15px; opacity: 0.8; letter-spacing: 2px;">INCONFIDENTES - MG</p>
     </div>
 
     <section id="localizacao">
-        <h2 class="section-title">Localização na Rota</h2>
+        <h2 class="section-title">Sua Parada na Rota</h2>
         <div class="map-frame">
-            <iframe width="100%" height="100%" style="border:0" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.0811902096716!2d-46.3312061!3d-22.4259505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cb79199f75bcdf%3A0x69d825e463e59487!2sPousada%20Caminho%20Da%20F%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"></iframe>
+            <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Pousada+Caminho+da+Fé+Inconfidentes+MG&t=&z=15&ie=UTF8&iwloc=&output=embed0"></iframe>
         </div>
-        <p style="text-align: center; margin-top: 15px; font-weight: 600;">📍 MG-290, Inconfidentes - MG</p>
+        <p style="text-align: center; margin-top: 20px; font-weight: 600;">📍 Rodovia MG-290, Inconfidentes - MG</p>
     </section>
 
-    <footer style="background: var(--earth); color: var(--sand); text-align: center; padding: 40px;">
-        <p>© 2026 Pousada Caminho da Fé - Inconfidentes, MG</p>
+    <footer style="background: var(--earth); color: var(--sand); text-align: center; padding: 60px 20px;">
+        <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Pousada Caminho da Fé</h3>
+        <p>© 2026 - O refúgio oficial do peregrino em Inconfidentes.</p>
     </footer>
 
-    <a href="https://wa.me/5535998171465" class="whatsapp-float">
+    <a href="https://wa.me/5535998171465?text=Olá! Gostaria de reservar um quarto." class="whatsapp-float" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
 
