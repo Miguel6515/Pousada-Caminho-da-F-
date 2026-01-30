@@ -94,13 +94,11 @@
         section { padding: 80px 8%; max-width: 1400px; margin: auto; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 38px; text-align: center; color: var(--earth); margin-bottom: 50px; }
 
-        /* GRID POLAROID */
         .grid-polaroid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .polaroid { background: white; padding: 15px 15px 50px; box-shadow: var(--shadow); transform: rotate(-2deg); }
         .polaroid img { width: 100%; height: 300px; object-fit: cover; }
         .polaroid p { text-align: center; font-family: 'Caveat', cursive; font-size: 24px; margin-top: 15px; }
 
-        /* SEÇÃO DE SERVIÇOS */
         .servicos-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -115,7 +113,6 @@
             box-shadow: var(--shadow);
             border-bottom: 4px solid var(--primary);
         }
-        .servico-item h3 { color: var(--earth); margin-bottom: 10px; font-size: 18px; }
 
         .quote-section {
             background: var(--earth);
@@ -164,16 +161,16 @@
         <h2 class="section-title">O Descanso do Peregrino</h2>
         <div class="grid-polaroid">
             <div class="polaroid">
-                <img src="imagens/vista.jpg">
+                <img src="imagens/vista.jpg" alt="Vista">
                 <p>Paz na Varanda</p>
             </div>
             <div class="polaroid">
-                <img src="imagens/quarto.jpg">
+                <img src="imagens/quarto.jpg" alt="Quarto">
                 <p>Sono Merecido</p>
             </div>
             <div class="polaroid">
-                <img src="imagens/outra_img.jpg">
-                <p>Acolhimento</p>
+                <img src="imagens/acolhimento.jpg" alt="Acolhimento">
+                <p>Acolhimento Mineiro</p>
             </div>
         </div>
     </section>
@@ -183,19 +180,19 @@
         <div class="servicos-container">
             <div class="servico-item">
                 <h3>☕ Café da Manhã</h3>
-                <p>Completo e reforçado para sua caminhada.</p>
+                <p>Farto e caseiro para começar bem o dia.</p>
             </div>
             <div class="servico-item">
                 <h3>🚿 Banho Quente</h3>
-                <p>Ducha revigorante para relaxar os músculos.</p>
+                <p>Conforto essencial após quilômetros de fé.</p>
             </div>
             <div class="servico-item">
                 <h3>🧺 Lavanderia</h3>
-                <p>Espaço para lavar e secar suas roupas.</p>
+                <p>Área disponível para cuidar do seu equipamento.</p>
             </div>
             <div class="servico-item">
-                <h3>📶 Wi-Fi Grátis</h3>
-                <p>Para você avisar a família que chegou bem.</p>
+                <h3>📶 Wi-Fi</h3>
+                <p>Conecte-se e compartilhe sua jornada.</p>
             </div>
         </div>
     </section>
@@ -207,8 +204,9 @@
     <section id="localizacao">
         <h2 class="section-title">Localização na Rota</h2>
         <div class="map-frame">
-            <iframe width="100%" height="100%" style="border:0" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.4716762391636!2d-46.3331828!3d-22.3735742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cb79199ef7bcdf%3A0x69d825e463e59487!2sPousada%20Caminho%20Da%20F%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1700000000000"></iframe>
+            <iframe width="100%" height="100%" style="border:0" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.0811902096716!2d-46.3312061!3d-22.4259505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cb79199f75bcdf%3A0x69d825e463e59487!2sPousada%20Caminho%20Da%20F%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"></iframe>
         </div>
+        <p style="text-align: center; margin-top: 15px; font-weight: 600;">📍 MG-290, Inconfidentes - MG</p>
     </section>
 
     <footer style="background: var(--earth); color: var(--sand); text-align: center; padding: 40px;">
